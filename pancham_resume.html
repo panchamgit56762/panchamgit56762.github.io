@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Resume - Pancham Kumar</title>
+    <style>
+      body {
+        font-family: "Helvetica", "Arial", sans-serif;
+        line-height: 1.6;
+        color: #333;
+        margin: 0;
+        padding: 20px;
+        background: #f9f9f9;
+      }
+      .container {
+        background: #fff;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 50px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+      .header {
+        text-align: center;
+        border-bottom: 2px solid #333;
+        padding-bottom: 10px;
+      }
+      .header h1 {
+        margin: 0;
+        font-size: 24pt;
+      }
+      .header p {
+        margin: 5px 0;
+        font-size: 11pt;
+        word-wrap: break-word;
+      }
+      .header a {
+        color: #0066cc;
+        text-decoration: none;
+      }
+      .section {
+        margin-top: 20px;
+      }
+      .section h3 {
+        font-size: 14pt;
+        color: #000;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+      }
+      .section p,
+      .section ul {
+        margin: 0;
+        font-size: 11pt;
+      }
+      ul {
+        padding-left: 20px;
+      }
+      li {
+        margin-bottom: 10px;
+      }
+      strong {
+        font-weight: bold;
+      }
+      em {
+        font-style: italic;
+      }
+      .project-title {
+        font-weight: bold;
+      }
+      .tech-stack {
+        font-style: italic;
+        color: #555;
+      }
+      /* Gemini Feature Styles */
+      .gemini-feature {
+        background-color: #f0f4ff;
+        border: 1px solid #d9e2ff;
+        border-radius: 8px;
+        padding: 20px;
+        margin-top: 25px;
+        text-align: center;
+      }
+      .gemini-feature h4 {
+        margin-top: 0;
+        color: #3341a0;
+      }
+      .gemini-feature input {
+        width: 80%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-bottom: 10px;
+      }
+      .gemini-feature button {
+        padding: 10px 20px;
+        border: none;
+        background-color: #4a69bd;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 11pt;
+        transition: background-color 0.3s;
+      }
+      .gemini-feature button:disabled {
+        background-color: #a0a0a0;
+        cursor: not-allowed;
+      }
+      .gemini-feature button:hover:not(:disabled) {
+        background-color: #3b528f;
+      }
+      #pitch-result {
+        margin-top: 15px;
+        text-align: left;
+        padding: 15px;
+        background-color: #fff;
+        border-radius: 5px;
+        border: 1px solid #e0e0e0;
+        min-height: 50px;
+        white-space: pre-wrap;
+        font-size: 10.5pt;
+      }
+
+      /* Responsive Design */
+      @media screen and (max-width: 768px) {
+        body {
+          padding: 10px;
+        }
+        .container {
+          padding: 25px;
+        }
+        .header h1 {
+          font-size: 20pt;
+        }
+        .header p {
+          font-size: 10pt;
+        }
+        .section h3 {
+          font-size: 13pt;
+        }
+        .section p,
+        .section ul {
+          font-size: 10pt;
+        }
+        .gemini-feature input {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>PANCHAM KUMAR</h1>
+        <p>
+          Bhopal, Madhya Pradesh | +91-6201156762 |
+          <a href="mailto:kumarpancham4444@gmail.com"
+            >kumarpancham4444@gmail.com</a
+          ><br />
+          <a href="https://www.linkedin.com/in/pancham-kumar-404a57257"
+            >linkedin.com/in/pancham-kumar-404a57257</a
+          >
+          |
+          <a href="https://github.com/panchamgit56762"
+            >github.com/panchamgit56762</a
+          >
+          |
+          <a href="#">your-portfolio-website.com</a>
+        </p>
+      </div>
+
+      <!-- Gemini API Feature -->
+      <div class="gemini-feature">
+        <h4>✨ AI-Powered Pitch Generator</h4>
+        <p style="font-size: 10pt; margin-bottom: 15px">
+          Recruiter? Enter a job role (e.g., "Frontend Developer at Google") and
+          see why I am a great fit!
+        </p>
+        <input type="text" id="jobRoleInput" placeholder="Enter Job Role..." />
+        <br />
+        <button id="generatePitchBtn" onclick="generatePitch()">
+          Generate Pitch
+        </button>
+        <div id="pitch-result">Your personalized pitch will appear here...</div>
+      </div>
+
+      <div class="section">
+        <h3>PROFESSIONAL SUMMARY</h3>
+        <p>
+          A proactive and aspiring Web Developer, currently pursuing a Master of
+          Computer Applications (MCA). Equipped with a strong foundation in
+          frontend technologies including HTML, CSS, JavaScript, and React.js.
+          Passionate about building intuitive user interfaces and aiming to
+          expand expertise into Full-Stack Development and Cloud Computing.
+        </p>
+      </div>
+
+      <div class="section">
+        <h3>EDUCATION</h3>
+        <!-- Education content remains the same -->
+        <ul>
+          <li>
+            <strong>Master of Computer Applications (MCA)</strong><br />
+            LNCT College (RGPV University), Bhopal | Expected 2026
+          </li>
+          <li>
+            <strong>Bachelor of Computer Applications (BCA)</strong><br />
+            LNCT University, Bhopal | 2024<br />
+            <em>Aggregate: 75%</em>
+          </li>
+          <li>
+            <strong>Himalayan International School (CBSE Board)</strong><br />
+            Higher Secondary (12th): 70% | Senior Secondary (10th): 75%
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>PROJECTS</h3>
+        <ul>
+          <li>
+            <span class="project-title"
+              >Interactive AI Resume (This Page!)</span
+            >
+            |
+            <span class="tech-stack"
+              >Tech Stack: HTML, CSS, JavaScript, Gemini API</span
+            >
+            <ul>
+              <li>
+                Developed this resume as a dynamic web application featuring an
+                AI-powered pitch generator.
+              </li>
+              <li>
+                Integrated the Google Gemini API to generate personalized
+                responses, demonstrating proficiency in using modern AI tools
+                and REST APIs.
+              </li>
+              <li>
+                <strong>GitHub Link:</strong>
+                <em>[Link-to-This-Project-on-GitHub]</em>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <span class="project-title">Weather Forecasting Website</span> |
+            <span class="tech-stack"
+              >Tech Stack: HTML, CSS, JavaScript, REST API</span
+            >
+            <ul>
+              <li>
+                Developed a client-side web application to fetch and display
+                real-time weather data for any city worldwide using a
+                third-party API.
+              </li>
+              <li>
+                Engineered a clean and user-friendly interface to present
+                complex data, including temperature, humidity, and wind speed,
+                in a structured and easily understandable format.
+              </li>
+              <li>
+                <strong>GitHub Link:</strong>
+                <em>[Link-to-Your-Weather-Project-on-GitHub]</em>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <span class="project-title"
+              >[Project 3 - Personal Portfolio Website]</span
+            >
+            |
+            <span class="tech-stack">[Tech Stack: React.js, Tailwind CSS]</span>
+            <ul>
+              <li>
+                <em
+                  >(Note: Develop a personal portfolio to showcase your skills,
+                  projects, and resume. This is a crucial project for any web
+                  developer.)</em
+                >
+              </li>
+              <li>
+                <strong>GitHub Link:</strong>
+                <em>[Link-to-Your-Portfolio-Project-on-GitHub]</em>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>TECHNICAL SKILLS</h3>
+        <!-- Skills content remains the same -->
+        <ul>
+          <li><strong>Programming Languages:</strong> Python, C, JavaScript</li>
+          <li>
+            <strong>Frontend Technologies:</strong> HTML, CSS, Bootstrap,
+            Tailwind CSS, DOM, jQuery, React.js
+          </li>
+          <li><strong>Developer Tools:</strong> VS Code, Git, GitHub</li>
+          <li>
+            <strong>Core Concepts:</strong> Object-Oriented Programming (OOPS),
+            DBMS, Functions, Loops, Arrays
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>CERTIFICATIONS</h3>
+        <!-- Certifications content remains the same -->
+        <ul>
+          <li>
+            Certificate in <strong>Frontend Development</strong> (from
+            Udemy/Coursera)
+          </li>
+          <li>
+            Certificate in <strong>React.js</strong> (from Udemy/Coursera)
+          </li>
+          <li>
+            Certificate in <strong>Python Programming</strong> (from Programming
+            Hub/Udemy)
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      // JavaScript to call Gemini API
+      const generatePitchBtn = document.getElementById("generatePitchBtn");
+      const jobRoleInput = document.getElementById("jobRoleInput");
+      const pitchResultDiv = document.getElementById("pitch-result");
+
+      async function generatePitch() {
+        const jobRole = jobRoleInput.value;
+        if (!jobRole.trim()) {
+          pitchResultDiv.textContent = "Please enter a job role first.";
+          return;
+        }
+
+        generatePitchBtn.disabled = true;
+        generatePitchBtn.textContent = "Generating...";
+        pitchResultDiv.textContent = "AI is thinking... please wait.";
+
+        // Hardcoded resume data for the prompt context
+        const resumeContext = `
+            Name: Pancham Kumar
+            Role applying for: Web Developer Fresher
+            Education: Master of Computer Applications (MCA), ongoing. Bachelor of Computer Applications (BCA) with 75%.
+            Key Skills: HTML, CSS, JavaScript, React.js, Python, C, Bootstrap, Tailwind CSS.
+            Core Concepts: OOPS, DBMS.
+            Projects: Built a Weather Forecasting App using REST APIs and an Interactive AI Resume.
+            Career Goal: Aspires to become a Full-Stack Developer and work with Cloud Computing.
+            Personal Attributes: Proactive, eager to learn, passionate about building intuitive user interfaces.
+        `;
+
+        const systemPrompt =
+          "You are an expert career coach. Based on the provided resume context, write a compelling, professional, and concise paragraph (3-4 sentences) on why Pancham Kumar is an excellent candidate for the specified job role. Tailor the response to the job role. Start directly with the pitch.";
+
+        const userQuery = `Job Role: ${jobRole}\n\nResume Context:\n${resumeContext}`;
+
+        const apiKey = ""; // API key will be provided by the environment
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+        const payload = {
+          contents: [{ parts: [{ text: userQuery }] }],
+          systemInstruction: {
+            parts: [{ text: systemPrompt }],
+          },
+        };
+
+        try {
+          const response = await fetchWithRetry(
+            apiUrl,
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(payload),
+            },
+            3
+          );
+
+          if (!response.ok) {
+            throw new Error(`API call failed with status: ${response.status}`);
+          }
+
+          const result = await response.json();
+          const candidate = result.candidates?.[0];
+
+          if (candidate && candidate.content?.parts?.[0]?.text) {
+            pitchResultDiv.textContent = candidate.content.parts[0].text;
+          } else {
+            pitchResultDiv.textContent =
+              "Sorry, the AI could not generate a response. Please try again.";
+            console.error("Unexpected API response structure:", result);
+          }
+        } catch (error) {
+          console.error("Error calling Gemini API:", error);
+          pitchResultDiv.textContent =
+            "An error occurred. Please check the console for details and try again later.";
+        } finally {
+          generatePitchBtn.disabled = false;
+          generatePitchBtn.textContent = "Generate Pitch";
+        }
+      }
+
+      // Function to handle API calls with exponential backoff retry mechanism
+      async function fetchWithRetry(url, options, retries = 3, delay = 1000) {
+        for (let i = 0; i < retries; i++) {
+          try {
+            const response = await fetch(url, options);
+            if (response.ok || response.status < 500) {
+              // Don't retry for client-side errors (4xx)
+              return response;
+            }
+            // Only retry on server-side errors (5xx)
+          } catch (error) {
+            if (i === retries - 1) throw error; // Rethrow last error
+          }
+          await new Promise((resolve) =>
+            setTimeout(resolve, delay * Math.pow(2, i))
+          ); // Exponential backoff
+        }
+        throw new Error("API request failed after multiple retries.");
+      }
+    </script>
+  </body>
+</html>
